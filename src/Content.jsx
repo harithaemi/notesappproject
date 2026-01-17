@@ -28,7 +28,7 @@ const Content = ({ setShowForm, search, setSearch, filter, setFilter }) => {
         </div>
       </div>
 
-      {/* Filter Buttons */}
+     
       <div className="flex gap-2 justify-center">
         {["active", "archived", "trash"].map(type => (
           <button

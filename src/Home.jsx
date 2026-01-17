@@ -31,7 +31,11 @@ const archiveNote = (id) => {
     n.id === id ? { ...n, status: "archived" } : n
   ))
 }
-
+const restoreNote = (id) => {
+  setNotes(notes.map(n =>
+    n.id === id ? { ...n, status: "active" } : n
+  ))
+}
 const deleteNote = (id) => {
   if (filter === "trash") {
     
@@ -78,11 +82,12 @@ const updateNote = (updatedNote) => {
   />
 )}
 
-        <NotesList
+ <NotesList
   notes={filteredNotes}
   archiveNote={archiveNote}
   deleteNote={deleteNote}
-    editNote={editNote}
+  editNote={editNote}
+  restoreNote={restoreNote}
 />
       </div>
 
